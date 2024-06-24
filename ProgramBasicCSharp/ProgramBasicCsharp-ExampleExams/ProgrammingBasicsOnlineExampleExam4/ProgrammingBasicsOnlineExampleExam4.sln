@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SeriesCalculator", "01.SeriesCalculator\01.SeriesCalculator.csproj", "{35F36A94-A3F9-495A-A014-FBD41B2FD764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.MovieProfit", "01.MovieProfit\01.MovieProfit.csproj", "{3A074BBA-96E5-43D3-B0B0-DE82C287992D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F36A94-A3F9-495A-A014-FBD41B2FD764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F36A94-A3F9-495A-A014-FBD41B2FD764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F36A94-A3F9-495A-A014-FBD41B2FD764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F36A94-A3F9-495A-A014-FBD41B2FD764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A074BBA-96E5-43D3-B0B0-DE82C287992D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A074BBA-96E5-43D3-B0B0-DE82C287992D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A074BBA-96E5-43D3-B0B0-DE82C287992D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A074BBA-96E5-43D3-B0B0-DE82C287992D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CB667F2-A749-4288-BAC2-F25990E6A5BC}
+	EndGlobalSection
+EndGlobal

@@ -1,10 +1,7 @@
-﻿namespace _08.MathPower
+﻿internal class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+
     }
 }

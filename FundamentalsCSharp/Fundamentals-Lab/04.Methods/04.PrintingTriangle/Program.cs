@@ -1,10 +1,31 @@
-﻿namespace _04.PrintingTriangle
+﻿
+internal class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        var number = int.Parse(Console.ReadLine());
+
+        PrintTriangle(number);    
+    }
+
+    static void PrintTriangle(int number)
+    {
+        for (int i = 1; i <= number; i++)
         {
-            Console.WriteLine("Hello, World!");
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(j + " ");
+            }
+            Console.WriteLine();
+        }
+
+        for (int i = number - 1; i >= 0; i--)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(j + " ");
+            }
+            Console.WriteLine();
         }
     }
 }

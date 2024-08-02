@@ -1,10 +1,7 @@
-﻿namespace _05.Orders
+﻿internal class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+
     }
 }

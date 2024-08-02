@@ -1,10 +1,7 @@
-﻿namespace _06.CalculateRectangleArea
+﻿internal class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+
     }
 }

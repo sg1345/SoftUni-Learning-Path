@@ -16,10 +16,20 @@
             }
             else
             {
-                if (array[i] > array[i + 1])
+                bool isTopInteger = false;
+                for(int j = i + 1;  j < array.Length; j++)
+                {
+                    if (array[i] <= array[j])
+                    {
+                        isTopInteger = false;
+                        break;
+                    }
+                    isTopInteger = true;
+                }
+                if (isTopInteger)
                 {
                     Console.Write(array[i] + " ");
-                }
+                }                
             }
         }
     }

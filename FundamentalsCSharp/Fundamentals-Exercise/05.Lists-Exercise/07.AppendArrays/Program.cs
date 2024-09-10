@@ -2,7 +2,18 @@
 {
     static void Main()
     {
+        List<string> list = ReadListOfStrings("|");
 
+        List<string> output = new List<string>();
+
+        for (int i = list.Count - 1; i >= 0; i--)
+        {           
+            var currentArray = list[i].Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            output.AddRange(currentArray);
+        }
+
+        PrintListOfStrings(output);
     }
 
     static List<int> ReadListOfIntegers(string separator = " ")

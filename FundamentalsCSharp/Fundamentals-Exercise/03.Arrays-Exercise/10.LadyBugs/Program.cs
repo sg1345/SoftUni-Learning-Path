@@ -50,7 +50,7 @@ internal class Program
             var direction = command[1];
             var flyLength = int.Parse(command[2]);
 
-            if (ladybugIndex >= field.Length - 1 || ladybugIndex < 0 || field[ladybugIndex] == 0)
+            if (ladybugIndex > field.Length - 1 || ladybugIndex < 0 || field[ladybugIndex] == 0)
             {
                 continue;
             }

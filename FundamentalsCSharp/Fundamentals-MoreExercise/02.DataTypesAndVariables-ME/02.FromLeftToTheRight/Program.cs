@@ -19,7 +19,7 @@ internal class Program
             decimal secondNumber = decimal.Parse(secondHalf);
 
             long result = 0;
-            if (firstNumber >= secondNumber)
+            if (firstNumber > secondNumber)
             {
                 string minus = "-";
                 firstHalf = firstHalf.Replace(minus, string.Empty);
@@ -34,9 +34,9 @@ internal class Program
             else
             {
                 string minus = "-";
-                firstHalf = firstHalf.Replace(minus, string.Empty);
+                secondHalf = secondHalf.Replace(minus, string.Empty);
                 string floatingPoint = ".";
-                firstHalf = firstHalf.Replace(floatingPoint, string.Empty);
+                secondHalf = secondHalf.Replace(floatingPoint, string.Empty);
 
                 for (int j = 0; j < secondHalf.Length; j++)
                 {

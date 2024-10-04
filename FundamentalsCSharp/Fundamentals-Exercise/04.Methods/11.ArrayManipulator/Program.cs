@@ -12,12 +12,12 @@ internal class Program
 
         string input = "";
 
-        while ((input=Console.ReadLine())!="end")
+        while ((input = Console.ReadLine()) != "end")
         {
             var command = input.Split();
-                
+
             var count = 0;
-            
+
             switch (command[0])
             {
                 case "exchange":
@@ -50,13 +50,13 @@ internal class Program
 
                 case "last":
 
-                    count = int.Parse (command[1]);
+                    count = int.Parse(command[1]);
 
                     LastNumberOfElements(count, command[2], array);
 
                     break;
             }
-            
+
         }
 
         Console.WriteLine($"[{string.Join(", ", array)}]");
@@ -64,8 +64,8 @@ internal class Program
 
 
     static void ExchangeIndex(int splitPoint, int[] array) // 2 , [1, 2, 3, 4, 5]
-    {   
-        if(splitPoint < 0 || splitPoint + 1 > array.Length)
+    {
+        if (splitPoint < 0 || splitPoint + 1 > array.Length)
         {
             Console.WriteLine("Invalid index");
             return;
@@ -83,8 +83,8 @@ internal class Program
         {
             temp[tempIndex++] = array[i]; // 4 5 1 2 3
         }
-        
-        for(int i = 0;i < array.Length; i++)
+
+        for (int i = 0; i < array.Length; i++)
         {
             array[i] = temp[i];
         }
@@ -101,23 +101,12 @@ internal class Program
 
         for (int i = 0; i < array.Length; i++)
         {
-            if (CheckEven(command, array[i]))
+            if ((CheckEven(command, array[i]) && IsMaxNumber(array, maxNumber, i)) ||
+                (CheckOdd(command, array[i]) && IsMaxNumber(array, maxNumber, i)))
             {
-                if (maxNumber <= array[i])
-                {
-                    maxNumber = array[i];
-                    isMatched = true;
-                    maxIndex = i;
-                }
-            }
-            else if (CheckOdd(command, array[i]))
-            {
-                if (maxNumber <= array[i])
-                {
-                    maxNumber = array[i];
-                    isMatched = true;
-                    maxIndex = i;
-                }
+                maxNumber = array[i];
+                isMatched = true;
+                maxIndex = i;
             }
         }
 
@@ -130,7 +119,7 @@ internal class Program
             Console.WriteLine("No matches");
         }
     }
-    
+
     static void MinIndex(string command, int[] array)
     {
         var minIndex = -1;
@@ -139,13 +128,8 @@ internal class Program
 
         for (int i = 0; i < array.Length; i++)
         {
-            if (CheckEven(command, array[i]) && minNumber >= array[i])
-            {           
-                minNumber = array[i];
-                isMatched = true;
-                minIndex = i;
-            }
-            else if (CheckOdd(command, array[i]) && minNumber >= array[i])
+            if ((CheckEven(command, array[i]) && IsMinNumber(array, minNumber, i))||
+                (CheckOdd(command, array[i]) && IsMinNumber(array, minNumber, i)))
             {
                 minNumber = array[i];
                 isMatched = true;
@@ -162,19 +146,19 @@ internal class Program
             Console.WriteLine("No matches");
         }
     }
-    
+
     static void FirstNumberOfElements(int count, string command, int[] array) // 3, even, [1, 2, 3, 4, 5]
     {
         if (count > array.Length)
         {
             Console.WriteLine("Invalid count");
-            return; 
+            return;
         }
         var temp = new int[count]; //[0, 0, 0]
-        var tempIndex = 0; 
+        var tempIndex = 0;
 
         for (int i = 0; i < array.Length; i++)
-        {            
+        {
             if (CheckEven(command, array[i]))
             {
                 temp[tempIndex++] = array[i]; //temp = [2, 4, 0]
@@ -184,7 +168,7 @@ internal class Program
                 temp[tempIndex++] = array[i];
             }
 
-            if (tempIndex == count) 
+            if (tempIndex == count)
             {
                 break;
             }
@@ -200,7 +184,7 @@ internal class Program
             {
                 print += $"{temp[i]}, ";
             }
-            Console.Write(print.TrimEnd(' ',',') + "]");
+            Console.Write(print.TrimEnd(' ', ',') + "]");
             Console.WriteLine();
         }
         else
@@ -208,7 +192,7 @@ internal class Program
             Console.WriteLine("[]");
         }
     }
-    
+
     static void LastNumberOfElements(int count, string command, int[] array) // 3, even, [1, 2, 3, 4, 5]
     {
         if (count > array.Length) // 3 > 5 - false
@@ -218,7 +202,7 @@ internal class Program
         }
         var temp = new int[count]; // [0, 0, 0]
         var tempIndex = count - 1; // 3
-        
+
         for (int i = array.Length - 1; i >= 0; i--)
         {
             if (CheckEven(command, array[i]))
@@ -227,17 +211,17 @@ internal class Program
             }
             else if (CheckOdd(command, array[i]))
             {
-                temp[tempIndex--] = array[i]; 
+                temp[tempIndex--] = array[i];
             }
 
-            if (tempIndex == - 1)
+            if (tempIndex == -1)
             {
                 break;
             }
 
         }
 
-        if (tempIndex != count-1)
+        if (tempIndex != count - 1)
         {
             var print = "";
 
@@ -255,7 +239,7 @@ internal class Program
         }
 
     }
-    
+
     static bool CheckEven(string command, int number)
     {
         if (command == "even" && number % 2 == 0)
@@ -267,7 +251,7 @@ internal class Program
             return false;
         }
     }
-    
+
     static bool CheckOdd(string command, int number)
     {
         if (command == "odd" && number % 2 == 1)
@@ -278,5 +262,15 @@ internal class Program
         {
             return false;
         }
+    }
+
+    static bool IsMaxNumber(int[] array, int maxNumber, int i)
+    {
+        return maxNumber <= array[i];
+    }
+
+    static bool IsMinNumber(int[] array, int minNumber, int i)
+    {
+        return minNumber >= array[i];
     }
 }

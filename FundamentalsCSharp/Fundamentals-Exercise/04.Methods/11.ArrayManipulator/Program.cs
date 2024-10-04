@@ -62,7 +62,6 @@ internal class Program
         Console.WriteLine($"[{string.Join(", ", array)}]");
     }
 
-
     static void ExchangeIndex(int splitPoint, int[] array) // 2 , [1, 2, 3, 4, 5]
     {
         if (splitPoint < 0 || splitPoint + 1 > array.Length)
@@ -128,7 +127,7 @@ internal class Program
 
         for (int i = 0; i < array.Length; i++)
         {
-            if ((CheckEven(command, array[i]) && IsMinNumber(array, minNumber, i))||
+            if ((CheckEven(command, array[i]) && IsMinNumber(array, minNumber, i)) ||
                 (CheckOdd(command, array[i]) && IsMinNumber(array, minNumber, i)))
             {
                 minNumber = array[i];
@@ -159,20 +158,15 @@ internal class Program
 
         for (int i = 0; i < array.Length; i++)
         {
-            if (CheckEven(command, array[i]))
+            if (CheckEven(command, array[i]) || CheckOdd(command, array[i]))
             {
                 temp[tempIndex++] = array[i]; //temp = [2, 4, 0]
-            }
-            else if (CheckOdd(command, array[i]))
-            {
-                temp[tempIndex++] = array[i];
             }
 
             if (tempIndex == count)
             {
                 break;
             }
-
         }
 
         if (tempIndex != 0)
@@ -201,24 +195,19 @@ internal class Program
             return;
         }
         var temp = new int[count]; // [0, 0, 0]
-        var tempIndex = count - 1; // 3
+        var tempIndex = count - 1; // 2
 
         for (int i = array.Length - 1; i >= 0; i--)
         {
-            if (CheckEven(command, array[i]))
+            if (CheckEven(command, array[i]) || CheckOdd(command, array[i]))
             {
                 temp[tempIndex--] = array[i]; // temp = [0, 2, 4]
-            }
-            else if (CheckOdd(command, array[i]))
-            {
-                temp[tempIndex--] = array[i];
             }
 
             if (tempIndex == -1)
             {
                 break;
             }
-
         }
 
         if (tempIndex != count - 1)
@@ -237,7 +226,6 @@ internal class Program
         {
             Console.WriteLine("[]");
         }
-
     }
 
     static bool CheckEven(string command, int number)
@@ -246,10 +234,9 @@ internal class Program
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
+
     }
 
     static bool CheckOdd(string command, int number)
@@ -258,10 +245,8 @@ internal class Program
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 
     static bool IsMaxNumber(int[] array, int maxNumber, int i)

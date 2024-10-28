@@ -1,11 +1,10 @@
-﻿
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 internal class Program
 {
     static void Main()
     {
-        var array = Console.ReadLine()
+        var numbers = Console.ReadLine()
             .Split()
             .Select(int.Parse)
             .ToArray();
@@ -24,19 +23,19 @@ internal class Program
 
                     var index = int.Parse(command[1]);
 
-                    ExchangeIndex(index, array);
+                    ExchangeIndex(index, numbers);
 
                     break;
 
                 case "max":
 
-                    MaxIndex(command[1], array);
+                    MaxIndex(command[1], numbers);
 
                     break;
 
                 case "min":
 
-                    MinIndex(command[1], array);
+                    MinIndex(command[1], numbers);
 
                     break;
 
@@ -44,7 +43,7 @@ internal class Program
 
                     count = int.Parse(command[1]);
 
-                    FirstNumberOfElements(count, command[2], array);
+                    FirstNumberOfElements(count, command[2], numbers);
 
                     break;
 
@@ -52,14 +51,14 @@ internal class Program
 
                     count = int.Parse(command[1]);
 
-                    LastNumberOfElements(count, command[2], array);
+                    LastNumberOfElements(count, command[2], numbers);
 
                     break;
             }
 
         }
 
-        Console.WriteLine($"[{string.Join(", ", array)}]");
+        Console.WriteLine($"[{string.Join(", ", numbers)}]");
     }
 
     static void ExchangeIndex(int splitPoint, int[] array) // 2 , [1, 2, 3, 4, 5]

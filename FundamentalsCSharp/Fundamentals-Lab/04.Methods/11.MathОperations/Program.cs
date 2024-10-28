@@ -29,7 +29,6 @@ internal class Program
             default:
                 result = (double)firstNumber / secondNumber;
                 break;
-
         }
 
         return result;

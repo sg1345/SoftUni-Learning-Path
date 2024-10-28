@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.EncryptSortAndPrintArray", "01.EncryptSortAndPrintArray\01.EncryptSortAndPrintArray.csproj", "{634D8630-7833-46C3-A9F3-BD2DDCAC0FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.EncryptSortAndPrintArray", "01.EncryptSortAndPrintArray\01.EncryptSortAndPrintArray.csproj", "{634D8630-7833-46C3-A9F3-BD2DDCAC0FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.PascalTriangle", "02.PascalTriangle\02.PascalTriangle.csproj", "{D1250EC6-9487-48FD-9054-0D5B988F062D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.PascalTriangle", "02.PascalTriangle\02.PascalTriangle.csproj", "{D1250EC6-9487-48FD-9054-0D5B988F062D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.RecursiveFibonacci", "03.RecursiveFibonacci\03.RecursiveFibonacci.csproj", "{B55AE05D-6CD6-4B36-A360-03D5C2E747F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.RecursiveFibonacci", "03.RecursiveFibonacci\03.RecursiveFibonacci.csproj", "{B55AE05D-6CD6-4B36-A360-03D5C2E747F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.FoldAndSum", "04.FoldAndSum\04.FoldAndSum.csproj", "{BE7762DD-05DD-407A-A9F4-2010A8855B4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.FoldAndSum", "04.FoldAndSum\04.FoldAndSum.csproj", "{BE7762DD-05DD-407A-A9F4-2010A8855B4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.LongestIncreasingSubsequence", "05.LongestIncreasingSubsequence\05.LongestIncreasingSubsequence.csproj", "{50CDE103-501A-4C1F-BA46-12A22DF78E63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.LongestIncreasingSubsequence", "05.LongestIncreasingSubsequence\05.LongestIncreasingSubsequence.csproj", "{50CDE103-501A-4C1F-BA46-12A22DF78E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.Demo", "00.Demo\00.Demo.csproj", "{C8C9E652-F4E9-404D-A8B4-F066B2EEFB23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{50CDE103-501A-4C1F-BA46-12A22DF78E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50CDE103-501A-4C1F-BA46-12A22DF78E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50CDE103-501A-4C1F-BA46-12A22DF78E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8C9E652-F4E9-404D-A8B4-F066B2EEFB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C9E652-F4E9-404D-A8B4-F066B2EEFB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C9E652-F4E9-404D-A8B4-F066B2EEFB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C9E652-F4E9-404D-A8B4-F066B2EEFB23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

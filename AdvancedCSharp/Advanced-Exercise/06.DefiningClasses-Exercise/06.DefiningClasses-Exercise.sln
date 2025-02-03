@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefiningClasses", "DefiningClasses\DefiningClasses.csproj", "{FF0F8FAF-C3E4-42F5-91FA-DA9FC5DC6692}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.SpeedRacing", "06.SpeedRacing\06.SpeedRacing.csproj", "{F152035E-9688-4E85-98EB-4BDA63EAEA61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.RawData", "07.RawData\07.RawData.csproj", "{8B1376F7-4555-4BA3-9FAE-3B1FDE75AD27}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{A9C5F1DF-B9FB-4F23-AD48-743107123A75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSalesmanAlternative", "CarSalesmanAlternative\CarSalesmanAlternative.csproj", "{5A47684B-089C-4E53-A125-B6DC4C3D53C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08.CarSalesman", "08.CarSalesman\08.CarSalesman.csproj", "{E42031EB-2958-4E7F-817C-192D4E0ADAEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.PokemonTrainer", "09.PokemonTrainer\09.PokemonTrainer.csproj", "{CE5DC5D6-7BD5-435C-BF41-328A1E5219BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF0F8FAF-C3E4-42F5-91FA-DA9FC5DC6692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0F8FAF-C3E4-42F5-91FA-DA9FC5DC6692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0F8FAF-C3E4-42F5-91FA-DA9FC5DC6692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0F8FAF-C3E4-42F5-91FA-DA9FC5DC6692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F152035E-9688-4E85-98EB-4BDA63EAEA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F152035E-9688-4E85-98EB-4BDA63EAEA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F152035E-9688-4E85-98EB-4BDA63EAEA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F152035E-9688-4E85-98EB-4BDA63EAEA61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1376F7-4555-4BA3-9FAE-3B1FDE75AD27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1376F7-4555-4BA3-9FAE-3B1FDE75AD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1376F7-4555-4BA3-9FAE-3B1FDE75AD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1376F7-4555-4BA3-9FAE-3B1FDE75AD27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C5F1DF-B9FB-4F23-AD48-743107123A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C5F1DF-B9FB-4F23-AD48-743107123A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C5F1DF-B9FB-4F23-AD48-743107123A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C5F1DF-B9FB-4F23-AD48-743107123A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A47684B-089C-4E53-A125-B6DC4C3D53C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A47684B-089C-4E53-A125-B6DC4C3D53C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A47684B-089C-4E53-A125-B6DC4C3D53C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A47684B-089C-4E53-A125-B6DC4C3D53C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E42031EB-2958-4E7F-817C-192D4E0ADAEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E42031EB-2958-4E7F-817C-192D4E0ADAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E42031EB-2958-4E7F-817C-192D4E0ADAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E42031EB-2958-4E7F-817C-192D4E0ADAEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5DC5D6-7BD5-435C-BF41-328A1E5219BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5DC5D6-7BD5-435C-BF41-328A1E5219BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5DC5D6-7BD5-435C-BF41-328A1E5219BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5DC5D6-7BD5-435C-BF41-328A1E5219BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62FCF438-D831-4808-8BED-2B23434ED4BA}
+	EndGlobalSection
+EndGlobal

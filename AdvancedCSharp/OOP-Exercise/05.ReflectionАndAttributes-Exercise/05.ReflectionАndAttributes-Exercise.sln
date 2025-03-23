@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandPattern", "E:\Downloads\01. Command Pattern_Skeleton_6.0\CommandPattern\CommandPattern.csproj", "{8801A41A-A9FC-49A2-8E2B-02AFDFD8B236}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationAttributes", "E:\Downloads\01. Command Pattern_Skeleton_6.0\ValidationAttributes\ValidationAttributes.csproj", "{506CA66C-063B-46CB-BEA7-AD7537909EC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8801A41A-A9FC-49A2-8E2B-02AFDFD8B236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8801A41A-A9FC-49A2-8E2B-02AFDFD8B236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8801A41A-A9FC-49A2-8E2B-02AFDFD8B236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8801A41A-A9FC-49A2-8E2B-02AFDFD8B236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506CA66C-063B-46CB-BEA7-AD7537909EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506CA66C-063B-46CB-BEA7-AD7537909EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506CA66C-063B-46CB-BEA7-AD7537909EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506CA66C-063B-46CB-BEA7-AD7537909EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18466157-721E-4A59-9F15-E4A915DA67F5}
+	EndGlobalSection
+EndGlobal

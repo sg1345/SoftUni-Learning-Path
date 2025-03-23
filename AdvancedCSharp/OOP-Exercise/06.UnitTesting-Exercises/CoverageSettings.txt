@@ -1,0 +1,4 @@
+1. Install coverlet
+2. Shift + rightClick on the folder(or on the white inside it) and Open PowerShell Window here 
+3. dotnet test --collect:"XPlat Code Coverage"
+4. reportgenerator -reports:**\*.cobertura.xml -targetdir:"coverage" -reporttypes:Html

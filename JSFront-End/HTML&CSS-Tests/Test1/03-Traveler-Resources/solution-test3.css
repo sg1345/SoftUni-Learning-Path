@@ -1,0 +1,291 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap);
+
+html{
+    --color-text-header:white;
+    --color-text-main-even: white;
+
+
+    --font-titles: 5.625em/1.5 'Cormorant Infant',sans-serif;
+    --font-main-quote: 5.625em/1 'Cormorant Infant',sans-serif;
+    --font-others: 1em/1.5 'Cormorant Infant',sans-serif;
+    --font-paragraphs: 1.125em/1.5 'Karla',sans-serif;
+
+    --button-border:1px solid black;
+    --button-radius: 3px;
+    --button-size: 0.5em 1em;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1920px;
+}
+
+
+header{
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/poster.jpg) no-repeat center center;
+  /* background-size:cover; */
+  background-size: 100% 100%;
+
+  /* background-position: center -150px; */
+  
+padding: 2em 0;
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .logo{
+        a img{
+            max-width: 6em;
+            width: 100%;
+            height: auto;
+            margin-left: 5rem;
+        }
+    }
+    
+    ul {
+        margin-right: 3rem;
+        li {
+            display: inline-block;
+            list-style-type: none;
+            padding-right: 5em;
+            /* margin: 1em 0 0 0;  */
+    
+            a{
+                font: var(--font-paragraphs);
+                color: var(--color-text-header);
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+  }
+
+  .header-title{
+    /* padding: 7rem; */
+    margin:0 0 6rem 0;
+    h1{
+        text-align: center;
+        color: var(--color-text-header);
+        font: var(--font-titles);
+        font-weight: bold;
+        margin:8rem 0 6rem 0;
+    
+    }
+
+    p{
+        width: 55ch;
+        margin: 0 auto;
+        text-align: center;
+        color: var(--color-text-header);
+        font: var(--font-paragraphs);       
+    }
+
+  }
+
+}
+
+main{
+
+    section:nth-of-type(even){
+        background-color: rgba(225, 71, 71, 1);
+    }
+
+    section:nth-of-type(odd){
+        background-color: rgba(248, 240, 233, 1);
+    }
+
+    section.testimonials{
+
+        div.article-testimonials{
+            width: 120ch;
+            margin: 0 auto;
+
+            div.testimonials{
+                p{
+                    font: var(--font-paragraphs);
+                    opacity: 0.6;
+                    padding: 3rem 0 3rem 0;
+                }
+            }
+
+            div.quote{
+                p{
+                    font: var(--font-main-quote);
+                    font-size: 65px; 
+                    font-style: italic;
+                    opacity: 0.8;
+                    font-weight: bold;
+                    padding: 2rem 0 6rem 0;
+                }
+                
+            }
+
+        }
+
+    }
+
+    section.support{
+        padding: 3rem;
+        div.article-support{ 
+            display: flex;
+            
+            flex-direction: column;  
+            gap: 3em;         
+            width: 30ch;
+            margin: 0 auto;
+        }
+
+        h4{
+            font:var(--font-paragraphs);
+            color: var(--color-text-main-even);
+            text-align: center;
+            font-weight: bold;
+        }
+        p{
+            font: var(--font-paragraphs);
+            color: var(--color-text-main-even);
+            text-align: center;
+        }
+    }
+    
+    section.article{
+
+        padding:3em 0;
+
+        div.article-inner{
+
+            width: 62ch;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 3em;
+
+            h2{
+                font: var(--font-main-quote);
+                font-size: 65px;
+                font-weight: bold;
+                text-align: center;
+                opacity: 0.8;
+            }
+            
+            p{
+                font: var(--font-paragraphs);
+                opacity: 0.8;
+            }
+
+            .button-inner .button{
+                text-decoration: none;
+                color: black;
+                background-color: white;
+                opacity: 0.8;
+            }
+
+            .button-inner.read-more{
+                padding: 0.5em 0;
+                a{
+                    border: var(--button-border);
+                    border-radius: var(--button-radius);
+                    padding: var(--button-size);
+                }
+            }
+
+            .button-inner.read-all{
+                padding: 0.5em 0;
+                text-align: center;
+
+                a{                   
+                    border:var(--button-border);
+                    border-radius: var(--button-radius);
+                    padding: var(--button-size);
+                }
+
+            }
+
+        }
+
+    }
+
+    section.guide{
+
+        padding: 3em;
+
+        .guide-inner{
+            width: 110ch;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+            justify-content: space-around;
+
+            
+            h2{
+                font: var(--font-main-quote);
+                font-size: 65px;
+                color: var(--color-text-main-even);
+                font-weight: bold;
+                padding: 1em 0;
+            }
+
+            p{
+                font: var(--font-paragraphs);
+                color: var(--color-text-main-even);
+                padding:1em 0 2em 0;
+            }
+
+            .button-inner{
+                padding: 1em 0;
+                a{
+                    padding: 1em 1.5em;
+                    background-color: rgba(250, 216, 122, 1);
+                    text-decoration: none;
+                    color: black;
+                    border-radius: 30px;
+                }
+            }
+        }
+
+    }
+
+}
+
+footer{
+    background-color: rgba(53, 43, 42, 1);
+    
+    padding: 2em 0 2em 0;
+    .footer-inner{
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        margin-left: 5rem;
+        a{
+            img{
+                max-width: 4em;
+                width: 100%;
+                height: auto;
+              
+            }
+        }
+
+        p{
+            width: 48ch;
+            color: var(--color-text-main-even);
+            font: var(--font-paragraphs);
+        }
+        p.all-rights{
+            opacity: 0.2;
+        }
+    }
+
+}

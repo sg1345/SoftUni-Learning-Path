@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    background-color: #eee;
+}
+.flex-container{
+    width: 450px;
+    padding: 1em;
+    border: 2px solid blue;
+    display: flex;
+    background-color: white;
+}
+.flex-item{
+    background: #eee;
+    padding: 20px;
+    border: 2px solid #000;
+}
+.flex-item.flex-grow.zero{
+    flex-grow: 0;
+}
+.flex-item.flex-grow.one{
+    flex-grow: 1;
+}
+.flex-item.flex-grow.second-child{
+    flex-grow: 1;
+}
+.flex-item.flex-item.flex-grow.proportionally:nth-child(1){
+    flex-grow: 1;
+}
+.flex-item.flex-item.flex-grow.proportionally:nth-child(2){
+    flex-grow: 2;
+}
+.flex-item.flex-item.flex-grow.proportionally:nth-child(3){
+    flex-grow: 3;
+}
+h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

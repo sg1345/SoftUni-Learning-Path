@@ -1,0 +1,74 @@
+
+@media (width <= 600px){
+    div.container-fluid{
+        nav{
+            flex-direction: row-reverse;
+            padding-right: 2em;
+
+            .checkbtn {
+                display: block;
+            }
+
+            ul{
+                display: none;
+                
+                position: absolute;
+                flex-direction: column;
+                top: 100px;
+                background-color: inherit;
+                border-radius: 0.6rem;
+                
+
+                li{
+                    text-align: center;
+                    padding: 10px 10px;
+                    margin: 0;
+                    
+
+                    /* fix the menu on smaller width */
+                }
+            }
+        }
+
+        #check:checked~ul{
+            right:0.81em;
+            display: block;
+            
+        }
+
+        section.site-header.flex-center.mb-50.bgcolor-1.border-rounded{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            i,h1{
+                position: static;
+            }
+
+        }
+
+        section.about.mb-80.p-50.bgcolor-2.border-rounded{
+            display: flex;
+            align-items: center;
+
+            div{
+                position: static;
+            }
+        }
+
+        div.gallery-section.mb-80{
+            
+            div.gallery{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                height: 100vh;
+
+            }
+
+        }
+    }
+}

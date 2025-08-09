@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap);
+
+html{
+    --text-color:rgba(88, 88, 88, 1);
+    --texarea-color:rgba(88, 88, 88, 0.84);
+    --border-color:rgba(88, 88, 88, 0.3);
+    --background-color:rgba(246, 246, 246, 1);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family: 'Source Sans 3',sans-serif;
+
+    /* width: 3108px;
+    height: 1690px; */
+    
+    width: 1920px;
+    height: 1080px;
+    
+    /* overflow: hidden; */
+    
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* height: 100vh; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4em;
+        
+        transform: scale(0.64); 
+        /* /* transform-origin: top left; */
+    }
+    
+}
+
+main{
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 3rem;
+    height: 100%;
+
+
+    h1{
+        font-size: 40px;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        padding-bottom: 0.5em;
+    }
+
+    h1#in-touch{
+        padding-bottom: 2em;
+        
+    }
+
+    .section.form{
+    
+        form{
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3em;
+            /* flex: 1 1 100%; */
+
+            input,textarea{
+                background-color: var(--background-color);
+
+                border: none;
+                border-bottom: 1px solid var(--border-color);
+
+                font-size: 30px;
+                color: var(--text-color);
+                font-family: inherit;
+
+                padding-bottom: 0.5em;
+                
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+                    border-bottom: 5px solid var(--border-color);
+                }
+            }
+
+            textarea{
+                color: var(--texarea-color);
+            }
+            
+            
+            input#email,
+            input#name{
+                   flex: 48%;                
+            }
+
+            textarea#message{
+                flex: 100%;
+                
+            }
+
+            button{
+
+                background-color: var(--text-color);
+                color: white;
+                border: none;
+                border-radius: 6px;
+
+                padding: 1em 2em;
+                font-family: inherit;
+                font-size: 25px;
+                font-weight: bold;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+
+                &:active{
+                    background-color: var(--texarea-color);
+                }
+            }
+
+        }
+
+    }
+
+    .section.follow{
+        ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 38em;
+            gap: 1em 1.5em;
+            padding: 0.8rem;
+
+            li{
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 7.5em;
+                height: 6em;
+
+                font-family: inherit;
+                
+                
+                
+                border: 3px solid var(--border-color);
+                border-radius: 6px;
+
+                a{
+                    color: var(--text-color);
+                    overflow: hidden;
+                    font-size: 40px;
+                }
+            }
+
+        }
+    }
+
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    Font-family: 'Source Sans 3',sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+
+    .design{
+        a{
+            color: var(--text-color);
+            font-weight: 500;
+        }
+    }
+
+}

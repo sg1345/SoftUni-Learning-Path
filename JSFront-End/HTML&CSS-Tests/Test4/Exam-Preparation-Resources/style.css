@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+
+html{
+    --border-radius: 10px;
+    --border-color:rgba(204, 204, 204, 1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(224, 224, 224, 1);
+    font-family: 'Gochi Hand';
+    font-weight: 400;
+}
+
+
+.wrapper{
+    width: 1000px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 1em;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    
+}
+
+.upper-side{
+    padding: 25px;
+    border-bottom: 1px solid var(--border-color);
+
+    .picture-backround-area{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        
+        background-image: url(images/nature.jpg);
+        background-size: cover;
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius:var(--border-radius);
+
+        height: 535px;
+        width: auto;
+
+        .message-area-upper-side{
+            background-color: white;
+            border-radius: var(--border-radius);
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-bottom: 13px;
+
+            h2,p{
+                text-align: center;
+
+                padding-left: 1.6rem;
+                padding-right: 1.6rem;
+            }
+            h2{
+                padding-top: 1rem;
+                padding-bottom: 0.5rem;
+            }
+            p{
+                padding-bottom: 1rem;
+            }
+
+
+        }
+    }
+}
+
+.lower-side{
+    .message-area-lower-side{
+        padding: 25px;
+
+        h2{
+            padding-bottom: 1rem;
+        }
+
+        p {
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+h2{
+    opacity: 0.8;
+}
+p{
+    opacity: 0.6;
+    font-size: 18px;
+}

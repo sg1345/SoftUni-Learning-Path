@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
+
+html{
+    --color-red: rgba(229, 9, 20, 1);
+    --border-sections: 15px;
+    --border-movies: 10px;
+} 
+
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter';
+    color: white;
+    background-color: rgba(11, 11, 11, 1);
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat';
+}
+h3{
+    font-size: 34px;
+}
+
+header{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+
+    .header-wrapper{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    h2{
+        font-size: 36px;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        gap: 3em;
+
+        a{
+            font-size: 24px;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color:white;
+    }
+
+}
+
+main{
+    padding-left: 1em;
+    padding-right: 1em;
+    .main-wrapper{
+        .promotion{
+            background-image: url(img/movies/city-under-the-fire-bg.webp);
+            background-size: cover;
+            border-radius: var(--border-sections);
+            height: 814px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 3rem;
+
+            .info-wrapper{
+                width: 62ch;
+
+                h1{
+                    font-size: 48px;
+                }
+
+                & *{
+                    margin-bottom: 1rem;
+                }
+
+                .promotion-info{
+                    .release{
+                        font-size: 21px;
+                        opacity: 0.8;
+                    }
+                    .streaming{
+                        font-size: 17px;
+                        color: var(--color-red);
+                        font-weight: 700;
+                    }
+                    h3{
+                        text-transform: uppercase;
+                        /* font-size: 32px; */
+                    }
+                    .movie-genre{
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap:1em;
+
+                        margin-bottom: 0.2em;
+
+                        &>p{
+                            margin-bottom: 0;
+                            background-color: rgba(42, 35, 26, .5);
+                            padding: 0.5em 1em;
+                            border-radius: 30px;
+                        }
+                    }
+                    .rating{
+                        margin-bottom: 0;
+                    }
+                }
+                
+                    .btn{
+                        margin-top:4rem;                       
+                        margin-bottom: 0;
+                        a{
+                            background-color: var(--color-red);
+                            text-decoration: none;
+                            color: white;
+                            font-size: 21px;
+                            padding: 1em 2em;
+                            border-radius: 10px;                            
+                        }
+                    }
+
+            }
+        }
+
+        .main-content{
+            padding-left: 1em;
+            padding-right: 1em;
+
+            h3{
+                font-weight: 400;
+                padding-bottom: 0.5em;
+            }
+            &>div{
+                padding-top: 3em;
+            }
+            .continue-watching{
+
+                
+                img{
+                    width: 320px;                    
+                    object-fit: contain;
+                    border-radius: var(--border-movies);
+
+                                       
+                }
+                .the-line{
+                    margin-top: 0.5em;
+                    position: relative;
+                    width: 320px;
+                    height: 4px;
+                }
+                .the-line::before {
+                    content: "";
+                    position: absolute;                    
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgb(43, 43, 43);
+                    border-radius: 2px;
+                }
+
+                .the-line::after {
+                    content: "";
+                    position: absolute;
+                    top:0;
+                    width: 40%; 
+                    height: 100%;
+                    background-color: var(--color-red);
+                    border-radius: 2px;
+                }
+            
+            }
+
+            .top-picks{
+                .movie-list{
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 1em;
+                    img{
+                        width: 320px;                    
+                        object-fit: contain;
+                        border-radius: var(--border-movies);
+                    }
+                }
+            }
+
+            .comming-soon{
+
+                .movie{
+                    background-color: rgba(26, 26, 26, 1);
+                    border-radius: var(--border-movies);
+
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 1em;
+                    padding: 1em;
+
+                    
+                    img{
+                        width: 200px;                    
+                        object-fit: contain;
+                        border-radius: var(--border-movies);
+                    }
+
+                    .info{
+                        p{
+                            opacity: 0.7;
+                            margin-bottom: 1em;
+                        }
+                        a{
+                            background-color: var(--color-red);
+                            border-radius: 5px;
+                            padding:0.5em 1em;
+                            text-decoration: none;
+                            color: white;
+                        }
+                    }
+                }                
+            }
+
+            .browse{
+                .genres{
+                    display: flex;
+                    justify-content: center;
+                    gap: 2em;
+
+                    a{
+                        text-decoration: none;
+                        color: white;
+
+                        img{
+                            background-color: rgba(26, 26, 26, 1);
+                            padding: 1em;
+                            border-radius: 50%;
+                        }
+                        p{
+                            text-align: center;
+                            margin-top: 0.5em;
+                        }
+                    }
+
+                }
+            }
+            .register{
+
+                display: flex;
+                flex-direction: column;
+                
+                align-items: center;
+
+                &::before{
+                    content: "";
+                    display: block;
+                    top:0;
+                    width: 100%; 
+                    height: 2px;
+                    background-color: rgb(153, 153, 153);
+                        
+                }
+
+                h3{
+                    padding-top: 1em;
+                }
+                p{
+                    padding-bottom: 1em ;
+                }
+                a{
+                    text-decoration: none;
+                    color: white;
+                    background-color: var(--color-red);
+                    border-radius: 10px;
+                    padding: 1em 2em;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+}
+

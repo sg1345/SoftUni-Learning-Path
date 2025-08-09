@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+html{
+    --color-blue:rgba(41, 145, 230, 1);
+    --color-background:rgba(255, 240, 228, 1);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:var(--color-background);
+    font-family: 'Margarine';
+
+    i{
+        color: var(--color-blue);
+    }
+}
+
+.wrapper{
+
+    display: flex;
+    justify-content: center;
+    gap:1em;
+    margin-top: 8em;
+}
+
+.left-side-upper,
+.first-arc,
+.second-arc{
+
+    &::after{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    }
+}
+
+.left-side{
+    width: 441px;
+    /* height: 586px; */
+
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 30px 1px rgba(0, 0, 0, 0.5);
+
+
+    &>*{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .left-side-upper{
+        
+        h1{
+            padding-top: 1rem;
+            padding-bottom: 1em;
+        }
+
+       ul{
+            list-style: none;
+            
+            li{
+                display: flex;
+                gap:1em;
+                padding-bottom: 1em;
+            }
+       }
+
+    }
+
+    .left-side-lower{
+        p{
+            padding: 1em 0;
+        }
+
+        .percentage{
+            background-color: var(--color-blue);
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+
+            &.p-90{
+                width: 90%;
+                
+            }
+            &.p-80{
+                width: 80%;
+            }
+            &.p-75{
+                width: 75%;
+            }
+            &.p-50{
+                width: 50%;
+            }
+        }
+    }
+}
+
+.right-side{
+    width: 911px;
+
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 30px 1px rgba(0, 0, 0, 0.5);
+
+    &>*{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    h1{
+        text-align: center;
+        padding: 1em 0;
+    }
+    h2{
+        opacity: 0.6;
+        padding: 1rem 0;
+    }
+    .datetime{
+        color:var(--color-blue);
+        padding-bottom: 1rem;
+    }
+    p{
+        
+        padding-bottom: 1em;
+        line-height: 1.5;
+    }
+
+    .experience-section{
+        padding-bottom: 6px;
+    }
+}

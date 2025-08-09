@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+body{
+    padding-left: 1em;
+}
+
+.flex-container{
+    width: 400px;
+    height: 250px;
+    padding: 1em;
+    border: 2px solid blue;
+    display: flex;
+}
+
+.flex-container.flex-start{
+    align-items: flex-start;
+}
+.flex-container.center{
+    align-items: center;
+}
+.flex-container.flex-end{
+    align-items: flex-end;
+}
+.flex-container.baselane{
+    align-items: baseline;
+}
+
+.flex-item{
+    background: #eee;
+    padding: 20px;
+    border: 2px solid #000;
+}
+
+h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

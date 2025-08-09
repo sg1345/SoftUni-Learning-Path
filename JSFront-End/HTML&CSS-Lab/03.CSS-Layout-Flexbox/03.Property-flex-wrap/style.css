@@ -1,0 +1,27 @@
+*{
+        padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+.flex-container{
+    width: 435px;
+    padding: 1em;
+    border: 2px solid blue;
+    display: flex;
+}
+.flex-container.wrap{
+    flex-wrap: wrap;
+}
+.flex-container.wrap-reverse{
+    flex-wrap: wrap-reverse;
+}
+.flex-item{
+    background: #eee;
+    padding: 20px;
+    border: 2px solid #000;
+}
+
+h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

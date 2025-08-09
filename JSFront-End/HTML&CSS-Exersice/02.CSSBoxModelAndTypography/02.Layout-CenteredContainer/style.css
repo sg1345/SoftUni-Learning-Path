@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+.site{
+    border: 2px solid green;
+    padding: 2em;
+    margin: 0 auto;
+}
+.site div{
+    padding: 2em;
+    position: relative;   
+}
+
+.sections{
+    max-width: 66ch;
+    border: 2px solid blue;
+    padding: 2em;
+
+    margin: 0 auto;
+}
+.sections div{
+    font-size: larger;
+    font-weight: bold;
+    border: 2px solid black;
+    text-align: center;
+    margin-bottom: 1em;
+    align-items: center;
+}
+.sections div:last-child{
+    margin-bottom: 0;
+}

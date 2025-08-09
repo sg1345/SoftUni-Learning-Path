@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@media all {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .page {
+        padding: 2rem;
+        font: 14px/1.5 Lato, sans-serif;
+    }    
+
+    p {
+        padding-bottom: 1.5em;
+    }
+    pre{
+        background-color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 0.4em;
+        overflow-x: auto;
+    }
+}
+
+@media print {
+    body::before {
+        display: block;
+        content: 'The page is using a print preview or it was printed';
+        background-color:  #369;
+        color: #fff;
+        padding: 1em 1.5em;
+        margin: 2rem;
+        border-radius: 0.3em;
+    }
+}
+
+@media screen {
+    body::before {
+        display: block;
+        content: 'The page is being shown on a screen';
+        background-color:  #369;
+        color: #fff;
+        padding: 1em 1.5em;
+        margin: 2rem;
+        border-radius: 0.3em;
+    }
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+    body::before {
+    display: block;
+    content: 'The viewport width is larger than 800px and smaller than 1200px';
+    }
+}
+
+@media not (max-width: 1200px) {
+    body::before {
+    display: block;
+    content: 'The viewport width is larger than 1200px';
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body::before {
+    display: block;
+    content: 'The device is using a screen and the viewport width is smaller than 800px';
+    }
+}

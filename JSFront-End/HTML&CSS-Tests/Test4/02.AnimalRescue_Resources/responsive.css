@@ -1,0 +1,38 @@
+@media (width <= 600px) {
+    section.helpNeed{
+        ul{
+            flex-direction: column;
+        }
+    }
+
+    section.our-dogs{
+        ul{
+            /* justify-content: center;
+            column-gap: em; */
+            li{
+
+                img{
+                    width: 200px;
+                    height: 200px;
+                }
+
+                p{
+                    padding-bottom: 1em !important;
+                }
+            }
+        }
+    }
+    
+    header{
+        nav{
+            flex-direction: column;
+            
+            gap: 1em;
+            padding-top: 1.2em;
+        }
+
+        .header-title{
+            padding: 2em 0;
+        }
+    }
+}

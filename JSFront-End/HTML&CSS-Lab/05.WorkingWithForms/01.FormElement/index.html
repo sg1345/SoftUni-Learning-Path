@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Element</title>
+</head>
+<body>
+    <header>
+            <h1>The Form Element</h1>
+            <p>The <span>form</span> element represents a document section containing interactive controls for submitting information.</p>
+    </header>
+    <main>
+        <article>
+            <h2>Attribute - method="get" (default)</h2>
+            <p>Form data appended to the action URL with a ? separator.</p>
+
+<pre><code>&lt;form action="#" method="get"&gt;
+    &lt;label for="search-bar-get"&gt;Search&lt;/label&gt;
+    &lt;input name="search-bar" id="search-bar-get" type="search"&gt;
+    &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+</code></pre>
+
+            <form action="#" method="get">
+                <label for="search-bar-get">Search</label>
+                <input name="search-bar" id="search-bar-get" type="search">
+                <button>Submit</button>
+            </form>
+        </article>
+        <article>
+            <h2>Attribute - method="post" (default)</h2>
+            <p>Form data sent as the request body.</p>
+
+<pre><code>&lt;form action="#" method="post"&gt;
+    &lt;label for="search-bar-post"&gt;Search&lt;/label&gt;
+    &lt;input name="search-bar" id="search-bar-post" type="search"&gt;
+    &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+</code></pre>
+
+            <form action="#" method="post">
+                <label for="search-bar-post">Search</label>
+                <input name="search-bar" id="search-bar-post" type="search">
+                <button>Submit</button>
+            </form>
+        </article>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

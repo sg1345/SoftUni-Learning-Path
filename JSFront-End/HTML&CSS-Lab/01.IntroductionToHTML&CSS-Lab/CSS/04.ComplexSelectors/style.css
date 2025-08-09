@@ -1,0 +1,21 @@
+span.elements{    
+    color: rgb(124, 4, 4);    
+    font-weight: 900;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav #home{
+    font-weight: 900;
+}
+
+article.description p.description{
+    background-color:rgb(156, 205, 255);
+}
+img{
+    border: 10px solid red;
+    
+    
+}

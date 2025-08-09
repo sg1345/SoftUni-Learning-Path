@@ -1,0 +1,28 @@
+p{
+    color: rgb(1, 41, 41);
+    font-size: 20px;
+}
+div.highlight{
+    padding: 10px;
+    background-color: black;
+    color: aliceblue;
+}
+
+a.link[target="_self"]{
+    background-color: black;
+    
+}
+a:link{
+    color: chartreuse;
+}
+a:visited{
+    color:violet
+}
+a:hover{
+    color:white
+}
+
+.highlight, .link {
+    font-weight: 900;
+    font-style: italic;
+}

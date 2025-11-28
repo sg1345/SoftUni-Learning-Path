@@ -1,11 +1,16 @@
-﻿namespace Invoices.DataProcessor
+﻿using System.Globalization;
+
+namespace Invoices.DataProcessor
 {
     using System.ComponentModel.DataAnnotations;
     using System.Text;
     using Invoices.Data;
     using Invoices.Data.Models;
+    using Invoices.Data.Models.Enums;
     using Invoices.DataProcessor.ImportDto;
     using Invoices.Utilities;
+    using Microsoft.EntityFrameworkCore;
+    using Newtonsoft.Json;
 
     public class Deserializer
     {
@@ -30,19 +35,19 @@
             ImportClientDto[] importClientDtoArr = XmlSerializerWrapper
                 .Deserialize<ImportClientDto[]>(xmlString, "Clients")!;
 
-            if(importClientDtoArr != null)
+            if (importClientDtoArr != null)
             {
-                foreach(ImportClientDto clientDto in importClientDtoArr)
+                foreach (ImportClientDto clientDto in importClientDtoArr)
                 {
                     ICollection<Address> addressesToImport = new List<Address>();
 
-                    if(!IsValid(clientDto))
+                    if (!IsValid(clientDto))
                     {
                         sb.AppendLine(ErrorMessage);
                         continue;
                     }
 
-                    foreach(ImportAddressDto addressDto in clientDto.Addresses)
+                    foreach (ImportAddressDto addressDto in clientDto.Addresses)
                     {
                         if (!IsValid(addressDto))
                         {
@@ -58,8 +63,8 @@
                             continue;
                         }
 
-                        Address newAddress = new Address() 
-                        { 
+                        Address newAddress = new Address()
+                        {
                             StreetName = addressDto.StreetName,
                             StreetNumber = streetNumber,
                             PostCode = addressDto.PostCode,
@@ -79,7 +84,7 @@
                         Addresses = addressesToImport
                     };
 
-                   clientsToImport.Add(newClient);
+                    clientsToImport.Add(newClient);
 
                     sb.AppendLine(String.Format(SuccessfullyImportedClients, newClient.Name));
                 }
@@ -96,12 +101,167 @@
         {
             StringBuilder sb = new StringBuilder();
 
+            ICollection<Invoice> invoicesToImport = new List<Invoice>();
+
+            ImportInvoiceDto[] importInvoiceDtoArr = JsonConvert
+                .DeserializeObject<ImportInvoiceDto[]>(jsonString)!;
+
+            if (importInvoiceDtoArr != null)
+            {
+                foreach (ImportInvoiceDto invoiceDto in importInvoiceDtoArr)
+                {
+                    if (!IsValid(invoiceDto))
+                    {
+                        sb.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    bool isCurrencyTypeValid = Enum.IsDefined(typeof(CurrencyType), invoiceDto.CurrencyType);
+
+                    bool isDueDateValid = DateTime.TryParseExact
+                    (invoiceDto.DueDate,
+                        "yyyy-MM-dd'T'HH:mm:ss",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out DateTime dueDate);
+
+                    bool isIssueDateValid = DateTime.TryParseExact
+                    (invoiceDto.IssueDate,
+                        "yyyy-MM-dd'T'HH:mm:ss",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out DateTime issueDate);
+
+                    bool isClientIdValid = context
+                        .Clients
+                        .AsNoTracking()
+                        .Any(c => c.Id == invoiceDto.ClientId);
+
+                    if (!isCurrencyTypeValid ||
+                       !isDueDateValid ||
+                       !isIssueDateValid ||
+                       !isClientIdValid ||
+                       dueDate < issueDate)
+                    {
+                        sb.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    if (invoiceDto.Amount <= 0m)
+                    {
+                        sb.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    //Client client = context
+                    //    .Clients
+                    //    .AsNoTracking()
+                    //    .FirstOrDefault(c=>c.Id == invoiceDto.ClientId)!;
+
+                    Invoice newInvoice = new Invoice()
+                    {
+                        Number = invoiceDto.Number,
+                        IssueDate = issueDate,
+                        DueDate = dueDate,
+                        Amount = invoiceDto.Amount,
+                        CurrencyType = (CurrencyType)invoiceDto.CurrencyType,
+                        ClientId = invoiceDto.ClientId
+                    };
+
+                    invoicesToImport.Add(newInvoice);
+
+                    sb.AppendLine(String.Format(SuccessfullyImportedInvoices, newInvoice.Number));
+                }
+
+                context.AddRange(invoicesToImport);
+                context.SaveChanges();
+            }
+
             return sb.ToString().TrimEnd();
         }
 
         public static string ImportProducts(InvoicesContext context, string jsonString)
         {
             StringBuilder sb = new StringBuilder();
+
+            ICollection<Product> productsToImport = new List<Product>();
+
+            ImportProductDto[] importProductDtoArr = JsonConvert
+                .DeserializeObject<ImportProductDto[]>(jsonString)!;
+
+            if (importProductDtoArr != null)
+            {
+                foreach (var productDto in importProductDtoArr)
+                {
+                    if (!IsValid(productDto))
+                    {
+                        sb.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    bool isCategoryTypeValid = Enum.IsDefined(typeof(CategoryType), productDto.CategoryType);
+
+                    if (!isCategoryTypeValid)
+                    {
+                        sb.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    //Dictionary<int, int> seen = new Dictionary<int, int>();
+                    //foreach (int clientId in productDto.Clients)
+                    //{
+                    //    if (!seen.ContainsKey(clientId))
+                    //    {
+                    //        seen[clientId] = 1;
+                    //    }
+                    //    else
+                    //    {
+                    //        sb.AppendLine(ErrorMessage);
+                    //        seen[clientId]++;
+                    //    }
+                    //}
+                    var uniqueClientsIds = productDto.Clients.Distinct().ToList();
+
+
+                    var clients = context
+                        .Clients                        
+                        .Where(m => uniqueClientsIds.Contains(m.Id))
+                        .ToArray();
+                    
+                    var existingClientsIds = clients.Select(c => c.Id).ToArray();
+
+                    var missingClientsIds = uniqueClientsIds.Except(existingClientsIds).ToArray();
+
+                    if (missingClientsIds.Any())
+                    {
+                        foreach(var existingClient in missingClientsIds)
+                        {
+                            sb.AppendLine(ErrorMessage);
+                        }
+                    }
+
+                    Product newProduct = new Product()
+                    {
+                        Name = productDto.Name,
+                        Price = productDto.Price,
+                        CategoryType = (CategoryType)productDto.CategoryType,
+                        ProductsClients = clients.Select(c => new ProductClient()
+                        {
+                            Client = c,
+                            Product = null!
+                        })
+                        .ToArray(),
+                    };
+
+                    productsToImport.Add(newProduct);
+
+                    sb.AppendLine(
+                        String
+                        .Format(SuccessfullyImportedProducts,newProduct.Name,newProduct.ProductsClients.Count));
+                }
+                context.AddRange(productsToImport);
+                context.SaveChanges();
+            }
 
             return sb.ToString().TrimEnd();
         }
@@ -113,5 +273,5 @@
 
             return Validator.TryValidateObject(dto, validationContext, validationResult, true);
         }
-    } 
+    }
 }

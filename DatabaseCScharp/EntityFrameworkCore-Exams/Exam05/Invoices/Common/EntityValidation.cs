@@ -13,8 +13,8 @@ namespace Invoices.Common
             public const int NameMinLength = 9;
             public const int NameMaxLength = 30;
 
-            public const decimal PriceMin = 5.00m;
-            public const decimal PriceMax = 1000.00m;
+            public const string PriceMin = "5.00";
+            public const string PriceMax = "1000.00";
             public const string PriceTypeName = "decimal(6,2)";
         }
 
@@ -33,8 +33,8 @@ namespace Invoices.Common
 
         public static class Invoice
         {
-            public const int NumberMin = 1_000_000_000;
-            public const int NumberMax = 1_500_000_000;
+            public const string NumberMin = "1000000000";
+            public const string NumberMax = "1500000000";
         }
 
         public static class Client

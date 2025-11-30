@@ -1,16 +1,15 @@
-﻿using System.Globalization;
-
-namespace Invoices.DataProcessor
+﻿namespace Invoices.DataProcessor
 {
     using System.ComponentModel.DataAnnotations;
     using System.Text;
-    using Invoices.Data;
-    using Invoices.Data.Models;
-    using Invoices.Data.Models.Enums;
-    using Invoices.DataProcessor.ImportDto;
-    using Invoices.Utilities;
+    using Data;
+    using Data.Models;
+    using Data.Models.Enums;
+    using ImportDto;
+    using Utilities;
     using Microsoft.EntityFrameworkCore;
     using Newtonsoft.Json;
+    using static Utilities.Utility.UtilityHelper;
 
     public class Deserializer
     {
@@ -116,21 +115,13 @@ namespace Invoices.DataProcessor
                         continue;
                     }
 
-                    bool isCurrencyTypeValid = Enum.IsDefined(typeof(CurrencyType), invoiceDto.CurrencyType);
+                    bool isCurrencyTypeValid = IsValidEnum<CurrencyType>(invoiceDto.CurrencyType);
 
-                    bool isDueDateValid = DateTime.TryParseExact
-                    (invoiceDto.DueDate,
-                        "yyyy-MM-dd'T'HH:mm:ss",
-                        CultureInfo.InvariantCulture,
-                        DateTimeStyles.None,
-                        out DateTime dueDate);
+                    bool isDueDateValid =
+                        TryParseExactDate(invoiceDto.DueDate, "yyyy-MM-dd'T'HH:mm:ss", out var dueDate);
 
-                    bool isIssueDateValid = DateTime.TryParseExact
-                    (invoiceDto.IssueDate,
-                        "yyyy-MM-dd'T'HH:mm:ss",
-                        CultureInfo.InvariantCulture,
-                        DateTimeStyles.None,
-                        out DateTime issueDate);
+                    bool isIssueDateValid =
+                        TryParseExactDate(invoiceDto.IssueDate, "yyyy-MM-dd'T'HH:mm:ss", out var issueDate);
 
                     bool isClientIdValid = context
                         .Clients
@@ -152,11 +143,6 @@ namespace Invoices.DataProcessor
                         sb.AppendLine(ErrorMessage);
                         continue;
                     }
-
-                    //Client client = context
-                    //    .Clients
-                    //    .AsNoTracking()
-                    //    .FirstOrDefault(c=>c.Id == invoiceDto.ClientId)!;
 
                     Invoice newInvoice = new Invoice()
                     {
@@ -199,7 +185,7 @@ namespace Invoices.DataProcessor
                         continue;
                     }
 
-                    bool isCategoryTypeValid = Enum.IsDefined(typeof(CategoryType), productDto.CategoryType);
+                    bool isCategoryTypeValid = IsValidEnum<CategoryType>(productDto.CategoryType);
 
                     if (!isCategoryTypeValid)
                     {
@@ -207,34 +193,21 @@ namespace Invoices.DataProcessor
                         continue;
                     }
 
-                    //Dictionary<int, int> seen = new Dictionary<int, int>();
-                    //foreach (int clientId in productDto.Clients)
-                    //{
-                    //    if (!seen.ContainsKey(clientId))
-                    //    {
-                    //        seen[clientId] = 1;
-                    //    }
-                    //    else
-                    //    {
-                    //        sb.AppendLine(ErrorMessage);
-                    //        seen[clientId]++;
-                    //    }
-                    //}
                     var uniqueClientsIds = productDto.Clients.Distinct().ToList();
 
 
                     var clients = context
-                        .Clients                        
+                        .Clients
                         .Where(m => uniqueClientsIds.Contains(m.Id))
                         .ToArray();
-                    
+
                     var existingClientsIds = clients.Select(c => c.Id).ToArray();
 
                     var missingClientsIds = uniqueClientsIds.Except(existingClientsIds).ToArray();
 
                     if (missingClientsIds.Any())
                     {
-                        foreach(var existingClient in missingClientsIds)
+                        foreach (var existingClient in missingClientsIds)
                         {
                             sb.AppendLine(ErrorMessage);
                         }
@@ -257,7 +230,7 @@ namespace Invoices.DataProcessor
 
                     sb.AppendLine(
                         String
-                        .Format(SuccessfullyImportedProducts,newProduct.Name,newProduct.ProductsClients.Count));
+                        .Format(SuccessfullyImportedProducts, newProduct.Name, newProduct.ProductsClients.Count));
                 }
                 context.AddRange(productsToImport);
                 context.SaveChanges();

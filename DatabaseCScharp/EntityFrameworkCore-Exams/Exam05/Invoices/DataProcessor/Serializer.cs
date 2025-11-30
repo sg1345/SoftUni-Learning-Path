@@ -3,9 +3,8 @@ using Newtonsoft.Json;
 
 namespace Invoices.DataProcessor
 {
-    using Invoices.Data;
-    using Invoices.Data.Models.Enums;
-    using Invoices.Utilities;
+    using Data;
+    using Utilities;
     using Microsoft.EntityFrameworkCore;
     using System.Globalization;
 
@@ -13,27 +12,6 @@ namespace Invoices.DataProcessor
     {
         public static string ExportClientsWithTheirInvoices(InvoicesContext context, DateTime date)
         {
-
-            //var clientsWithTheirInvoices = context
-            //    .Clients
-            //    .AsNoTracking()
-            //    .Where(c => c.Invoices.Any(i => i.IssueDate > date))
-            //    .Select(c => new ExportClientDto()
-            //    {
-            //        ClientName = c.Name,
-            //        VatNumber = c.NumberVat,
-            //        InvoicesCount = c.Invoices.Count.ToString(),
-            //        Invoices = c.Invoices.Select(i => new ExportInvoiceDto()
-            //        {
-            //            InvoiceNumber = i.Number.ToString(),
-            //            InvoiceAmount = i.Amount.ToString("F2"),
-            //            DueDate = i.DueDate.ToString("d", CultureInfo.InvariantCulture),
-            //            Currency = i.CurrencyType.ToString(),
-
-            //        })
-            //        .ToArray()
-            //    });
-
             var clientsWithTheirInvoices = context
                 .Clients
                 .AsNoTracking()
